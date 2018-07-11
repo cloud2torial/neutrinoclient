@@ -1,0 +1,15 @@
+
+<div class="container adjust">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let product of products">
+      <mat-card>
+          <img  mat-card-image src="{{product.image_url}}" alt="{{product.productname}}">
+          <div class="align-items">
+          <h4>{{product.productname}}</h4>
+          <h5>Rs {{product.price}}</h5>
+          <button (click)="addtocard(product)" mat-stroked-button color="accent">Add</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

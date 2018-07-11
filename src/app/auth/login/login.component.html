@@ -1,0 +1,27 @@
+<div class="background-screen">
+  <div align="center" class="header-align">
+    <a href="" style="font-size: 42px;color: #fff;text-decoration: none;">Neutrino</a>
+  </div>
+  <div style="margin: 0 auto;width:40%;">
+    <mat-card>
+      <h1 class="title">Log In</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" class="form-spacing">
+          <mat-form-field class="example-full-width">
+              <input formControlName="email" matInput placeholder="Email" type="email" required class="example-right-align">
+              <span class="pd-8" matPrefix><mat-icon>email</mat-icon></span>
+              <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email is required</mat-error>
+              <mat-error *ngIf="loginForm.controls['email'].hasError('pattern')">Email is invalid</mat-error>
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+                <input formControlName="password" matInput placeholder="Password" type="text" class="example-right-align">
+                <span class="pd-8" matPrefix><mat-icon>lock</mat-icon></span>
+                <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password is required</mat-error>
+              </mat-form-field>
+        <div class="bottom-button">
+          <button type="submit" mat-raised-button class="button_1 button-design">Login</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
